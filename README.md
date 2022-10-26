@@ -1,5 +1,10 @@
-# poc-dnft-svg
-A case for using SVG to achieve dynamic NFTs. 
+# Proof of concept for dNFT using SVG
+We see a new generation of the internet full of new possibilities. Where, your creativity is valued and your digital objects belong to you.
+This repository will try to resignificate the concept of Metaverse. By proving interoperatibility among different NFT collections. 
+
+## A case for using SVG to achieve interaperable dynamic NFTs. 
+
+### First case: Decentraland wereables. 
 
 Here we will prove the concept of using SVG technology to generate a dynamic NFT on Ethereum consuming metadata from other NFTs.  
 On the first version we will mint on tesnet a `root_ERC-721` token with the field `animation_url` displaying one SVG image compused by 4 layers.
@@ -14,7 +19,7 @@ Layer 3) `image_url` taken `decentraland-wereable-2` on Polygon
 Layer 4) `image_url` taken `decentraland-wereable-3` on Polygon
 
 
-Being the whole digital asset a dNFT compoused by 4 internal layers. 
+The result will be a 
 The first and root image will be static and consuming  w. Using 1/4 of the final image.
 For the other 3 layers, extra properties or metadata will be used, in order to point to 3 different sources of images.
 Allowing the NFT holder to set three assets, which will be 3 separated layers over the root NFT Animation URL.
