@@ -8,16 +8,17 @@ This repository will try to resignificate the concept of Metaverse. By proving i
 
 Here we will prove the concept of using SVG technology to generate a dynamic NFT on Ethereum consuming metadata from other NFTs.  
 On the first version we will mint on tesnet a `root_ERC-721` token with the field `animation_url` displaying one SVG image compused by 4 layers.
+
+
+- Layer 1) `image_url` from `root_ERC-721` on Goerli, Ethereum Testnet.
+
+- Layer 2) `image_url` taken `decentraland-wereable-1` on Polygon. 
+
+- Layer 3) `image_url` taken `decentraland-wereable-2` on Polygon.
+
+- Layer 4) `image_url` taken `decentraland-wereable-3` on Polygon.
+
 ![Screen Shot 2022-10-25 at 21 05 07](https://user-images.githubusercontent.com/65098295/197904247-1199aa48-73b1-4cb6-b13c-de54f9353574.png)
-
-Layer 1) `image_url` from `root_ERC-721` on Goerli, Ethereum Testnet
-
-Layer 2) `image_url` taken `decentraland-wereable-1` on Polygon 
-
-Layer 3) `image_url` taken `decentraland-wereable-2` on Polygon
-
-Layer 4) `image_url` taken `decentraland-wereable-3` on Polygon
-
 
 The result will be a 
 The first and root image will be static and consuming  w. Using 1/4 of the final image.
