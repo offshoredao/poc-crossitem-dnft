@@ -6,7 +6,7 @@ This repository will try to resignificate the concept of Metaverse. By proving i
 
 ### First case: Decentraland wereables. 
 
-Here we will prove the concept of using SVG technology to generate a dynamic NFT on Ethereum consuming metadata from other NFTs.  
+Here we will prove the concept of using SVG technology to generate a dynamic NFT on Ethereum consuming metadata from external NFTs.  
 On the first version we will mint on tesnet a `root_ERC-721` token with the field `animation_url` displaying one SVG image compused by 4 layers.
 
 
