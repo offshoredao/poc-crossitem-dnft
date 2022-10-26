@@ -1,5 +1,5 @@
 # Proof of concept for dNFT using SVG
-We see a new generation of the internet full of new possibilities. Where, your creativity is valued and your digital objects belong to you.
+We see a new generation of the internet full of new possibilities. Where, your creativity is valued and your digital objects belong to you.<br>
 This repository will resignificate the concept of Metaverse. By proving interoperatibility among different NFT collections. 
 
 ## A case for using SVG to achieve interaperable dynamic NFTs. 
