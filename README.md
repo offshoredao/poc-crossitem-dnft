@@ -2,7 +2,7 @@
 We see a new generation of the internet full of new possibilities. Where, your creativity is valued and your digital objects belong to you.<br>
 In this repository we will redifine the concept of Metaverse by proving interoperability among different NFT collections.
 
-## A case for using SVG to achieve interaperable dynamic NFTs. 
+## A case for using SVG to achieve interoperable dynamic NFTs. 
 
 ### First case: Decentraland wereables. 
 
