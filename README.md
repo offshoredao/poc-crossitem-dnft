@@ -37,4 +37,4 @@ At the moment, the only missing segment to achieve a visual representation in th
 
 The following sequence diagram shows a flow for the proof of concept, which allows us to obtain the entire information stack of a `fp_nft` and its linked `dclwearable_nft` to generate the final image of an avatar by equipping a set of `dclwearable_nft(s)` to it.
 
-![image](https://user-images.githubusercontent.com/11360704/200095544-e34350e7-8fd7-4dd3-8f88-3a94d729c91f.png)
+![Diagrama sin título-3 drawio](https://user-images.githubusercontent.com/11360704/200144650-254cfcaf-8648-4b9c-b665-725d0ec270bf.png)
