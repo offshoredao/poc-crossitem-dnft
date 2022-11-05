@@ -24,8 +24,7 @@ In addition to the above, once the ownership of the items is proven we will gene
 
 Allowing the NFT holder to set three assets, which will be three separated layers stored at the `fp_nft` `animation_url`
 
-
-![image](https://user-images.githubusercontent.com/11360704/200095515-dfd2ab74-bcff-403e-bada-8b7f8c419430.png)
+![dnft-basic-image](https://user-images.githubusercontent.com/11360704/200147256-a8db5905-bb76-42a9-a6ef-4c6d77f2ea27.png)
 
 ## How it works
 
