@@ -1,8 +1,8 @@
 # POC Creating dynamic NFTs to achieve cross-collection interoperable items.
 
 We are at the forefront of the new internet full of possibilities. Where your creativity is valued and your digital objects belong to you.
-In this repository we will push the concept of Metaverse by proving interoperability among already existing NFT collections. 
-Due to their open source nature, we will start with **Decentraland Wearables** which live in the Polygon and Ethereum network. 
+In this repository we will push the concept of Metaverse by proving interoperability among already existing NFT collections building new NFTs capabilities giving the tecnology more expressive freedom in such a way that everyone has access to new usecases and new ground to explore.
+Due to their open source nature, we will start with **Decentraland Wearables** which live in the Polygon and Ethereum network.
 
 ## Version 0.1 - dNFT and Basic Image Manipulation.
 
