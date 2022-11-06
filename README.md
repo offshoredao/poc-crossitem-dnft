@@ -18,7 +18,7 @@ Due to their open source nature, we will start with **Decentraland Wearables** w
 
 In this initial version we will generate a `nft_collection` of dynamic ERC-721 NFTs, from here on `dNFT`, named Flying People, from here on `fp_nft`, with the ability to link three other referenced NFTs using their contractAddress and tokenId, in this case **Decentraland wearables** NFT, from here on `dclwearable_nft`.
 
-The references to these `dclwearable_nft(s)` will be stored in each `fp_nft` at the smart contract level to validate that the owner of a `fp_nft` is also the owner of the `dclwearable_nft` before linking them.
+The references to these `dclwearable_nft`(s) will be stored in each `fp_nft` at the smart contract level to validate that the owner of a `fp_nft` is also the owner of the `dclwearable_nft` before linking them.
 Now we create a representation of an Avatar (Flying People) with the ability to equip a set of external NFTs as wearables.
 
 In addition to the above, once the ownership of the items is proven we will generate a basic visual representation for the dynamic ERC-721 NFTs images from here on `dnft_image`, which in this case is composed of four different images - from here on called `layers`.
@@ -34,7 +34,7 @@ Allowing the NFT holder to set three assets, which will be three separated layer
 
 In this Proof of Concept we will use indexed information on the **Decentraland** subgraph from **TheGraph** protocol to get each `dclwearable_nft` image stored on **IPFS** (Interplanetary File System).
 
-Next a representation of `fp_nft` will be created with its user selected `dclwearable_nft(s)` through a `custom tool` that generates an image  
+Next a representation of `fp_nft` will be created with its user selected `dclwearable_nft`(s) through a `custom tool` that generates an image  
 
 At the moment, the only missing segment to achieve a visual representation in this use case would be a tool capable of combining the images from all sources and assembling a final image that represents an avatar.
 
