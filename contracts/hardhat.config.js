@@ -14,18 +14,32 @@ require("hardhat-deploy")
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || ""
 const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
 
+const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL || ""
+const MAINET_PRIVATE_KEY = process.env.PRIVATE_KEY || ""
+
+
 module.exports = {
     defaultNetwork: "hardhat",
     networks: {
-        hardhat: {},
+        hardhat: {
+            chainId: 31337,
+            // gasPrice: 130000000000,
+        },
         goerli: {
             url: GOERLI_RPC_URL,
             accounts: [PRIVATE_KEY],
             chainId: 5,
+            blockConfirmations: 6,
         },
         localhost: {
             url: "http://localhost:8545",
             chainId: 31337,
+        },
+        mainnet: {
+            url: MAINNET_RPC_URL,
+            accounts: [MAINET_PRIVATE_KEY],
+            chainId: 1,
+            blockConfirmations: 6,
         },
     },
     namedAccounts: {
