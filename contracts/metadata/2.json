@@ -1,0 +1,13 @@
+{
+    "name": "Flying People - 01",
+    "description": "First Flying People",
+    "image": "https://flyingpeople.org/nft-metadata/2.json",
+    "base_image": "ipfs://QmYscKamMVx7YsATvZMooobeKdzpKnNWQTFbSoqzRPff7M/2.png",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Legendary"
+      }
+    ]
+  }
+  

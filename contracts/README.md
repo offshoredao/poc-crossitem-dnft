@@ -1,26 +1,26 @@
 ## Getting Started
 
-Create a project using this example:
+This project uses hardhat and thirdweb/contractkit for development, testing, deployment and administration.
+
+- https://hardhat.org/
+- https://portal.thirdweb.com/contractkit
+
+## Install dependencies
 
 ```bash
-npx thirdweb create --contract --template hardhat-javascript-starter
+npm i
+# or
+yarn 
 ```
-
-You can start editing the page by modifying `contracts/Contract.sol`.
-
-To add functionality to your contracts, you can use the `@thirdweb-dev/contracts` package which provides base contracts and extensions to inherit. The package is already installed with this project. Head to our [Contracts Extensions Docs](https://portal.thirdweb.com/thirdweb-deploy/contract-extensions) to learn more.
-
 ## Building the project
 
-After any changes to the contract, run:
+Build Contracts
 
 ```bash
 npm run build
 # or
 yarn build
 ```
-
-to compile your contracts. This will also detect the [Contracts Extensions Docs](https://portal.thirdweb.com/thirdweb-deploy/contract-extensions) detected on your contract.
 
 ## Deploying Contracts
 
@@ -32,16 +32,12 @@ npm run deploy
 yarn deploy
 ```
 
-## Releasing Contracts
+This will trigger a deployment link, Once the deployment is configured, a transaction will be opened in metamask to confirm the action.
 
-If you want to release a version of your contracts publicly, you can use one of the followings command:
+If the transaction has been confirmed you can review the contract on your https://thirdweb.com/dashboard
+
+## Run test
 
 ```bash
-npm run release
-# or
-yarn release
+yarn hardhat test.
 ```
-
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).

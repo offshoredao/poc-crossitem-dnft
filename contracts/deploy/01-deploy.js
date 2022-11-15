@@ -5,7 +5,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deployer } = await getNamedAccounts()
 
     log("----------------------------------------------------")
-    arguments = ["FlyingPeopleDNFT", "FPDNFT", deployer, 0]
+    arguments = ["FlyingPeopleDNFT", "FPDNFT", deployer, 0, deployer]
     const flyingPeopleDNFT = await deploy("FlyingPeopleDNFT", {
         from: deployer,
         args: arguments,
@@ -13,7 +13,6 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         waitConfirmations: network.config.blockConfirmations || 1,
     })
     log(flyingPeopleDNFT)
-
 }
 
 module.exports.tags = ["all", "flyingPeopleDNFT", "main"]

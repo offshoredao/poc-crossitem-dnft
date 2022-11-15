@@ -17,7 +17,6 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY || ""
 const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL || ""
 const MAINET_PRIVATE_KEY = process.env.PRIVATE_KEY || ""
 
-
 module.exports = {
     defaultNetwork: "hardhat",
     networks: {
@@ -25,15 +24,15 @@ module.exports = {
             chainId: 31337,
             // gasPrice: 130000000000,
         },
+        localhost: {
+            url: "http://localhost:8545",
+            chainId: 31337,
+        },
         goerli: {
             url: GOERLI_RPC_URL,
             accounts: [PRIVATE_KEY],
             chainId: 5,
             blockConfirmations: 6,
-        },
-        localhost: {
-            url: "http://localhost:8545",
-            chainId: 31337,
         },
         mainnet: {
             url: MAINNET_RPC_URL,
@@ -50,20 +49,13 @@ module.exports = {
             // the account 0 on one network can be different than on another
         },
     },
-    settings: {
-        optimizer: {
-            enabled: true,
-            runs: 200,
-        },
-    },
     solidity: {
-        compilers: [
-            {
-                version: "0.8.11",
+        version: "0.8.9",
+        settings: {
+            optimizer: {
+                enabled: true,
+                runs: 200,
             },
-            {
-                version: "0.6.6",
-            },
-        ],
+        },
     },
 }
