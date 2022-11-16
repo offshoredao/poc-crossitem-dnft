@@ -15,13 +15,16 @@ app.get("/update-wearables", (req, res) => {
   const t2 = req.query.t2;
   const c3 = req.query.c3;
   const t3 = req.query.t3;
+  const tokenId = req.query.tokenId;
 
   // Buscar cada imagen de wearable
   // Componer las imagenes
   // Escribir imagen en dnft-imges directory
   // retorno OK
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
   res.json({
-    STATUS: "OK",
+    tokenId: "tokenId",
   });
 });
 
