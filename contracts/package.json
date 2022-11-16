@@ -1,5 +1,5 @@
 {
-  "name": "hardhat-javascript-starter",
+  "name": "fp-dnft-contracts",
   "scripts": {
     "build": "npx thirdweb@latest detect",
     "deploy": "npx thirdweb@latest deploy",
@@ -23,9 +23,7 @@
   },
   "dependencies": {
     "@ethersproject/bignumber": "^5.5.0",
-    "@openzeppelin/contracts": "^4.8.0",
-    "@openzeppelin/contracts-upgradeable": "^4.8.0",
-    "@thirdweb-dev/contracts": "^3.2.3",
+    "@thirdweb-dev/contracts": "^3",
     "@chainlink/contracts": "^0.5.1",
     "dotenv": "^16.0.0",
     "base64-sol": "^1.1.0",

@@ -779,17 +779,12 @@
     "@types/sinon-chai" "^3.2.3"
     "@types/web3" "1.0.19"
 
-"@openzeppelin/contracts-upgradeable@^4.8.0":
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/@openzeppelin/contracts-upgradeable/-/contracts-upgradeable-4.8.0.tgz#26688982f46969018e3ed3199e72a07c8d114275"
-  integrity sha512-5GeFgqMiDlqGT8EdORadp1ntGF0qzWZLmEY7Wbp/yVhN7/B3NNzCxujuI77ktlyG81N3CUZP8cZe3ZAQ/cW10w==
-
 "@openzeppelin/contracts-v0.7@npm:@openzeppelin/contracts@v3.4.2":
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-3.4.2.tgz#d81f786fda2871d1eb8a8c5a73e455753ba53527"
   integrity sha512-z0zMCjyhhp4y7XKAcDAi3Vgms4T2PstwBdahiO0+9NaGICQKjynK3wduSRplTgk4LXmoO1yfDGO5RbjKYxtuxA==
 
-"@openzeppelin/contracts@^4.3.3", "@openzeppelin/contracts@^4.8.0":
+"@openzeppelin/contracts@^4.3.3":
   version "4.8.0"
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.8.0.tgz#6854c37df205dd2c056bdfa1b853f5d732109109"
   integrity sha512-AGuwhRRL+NaKx73WKRNzeCxOCOCxpaqF+kp8TJ89QzAipSwZy/NoflkWaL9bywXFRhIzXt8j38sfF7KBKCPWLw==
@@ -952,10 +947,10 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@thirdweb-dev/contracts@^3.2.3":
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/@thirdweb-dev/contracts/-/contracts-3.2.3.tgz#371ee1eb87a56516e3aa3362b4f1f466010294a0"
-  integrity sha512-w0J4Bnllc3ppi4nC39K6jHDV1hXQipP3G2q1HtDvYAwSRtiivMBa020F8BL8ZAOefTMMb0F6WmCRu7Fgdh72Zw==
+"@thirdweb-dev/contracts@^3":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@thirdweb-dev/contracts/-/contracts-3.2.4.tgz#cff142fbd2d7cad0cab32b2019d4a1c26406abf8"
+  integrity sha512-P1CyGONe3OO2aqsdS4vroTP/VKrdRDEXG75231I3Cy7DmO7BXkKEq58myzTbcA6Xf1F8+ek/XFW6HqFGNsxuVw==
 
 "@truffle/error@^0.1.1":
   version "0.1.1"

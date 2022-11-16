@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
-pragma solidity ^0.8.11;
+pragma solidity ^0.8.0;
 
-import "@thirdweb-dev/contracts/base/ERC721Base.sol";
+import "@thirdweb-dev/contracts/base/ERC721Drop.sol";
 
 interface IERC721 {
     function ownerOf(uint256 tokenId) external view returns (address);
@@ -18,8 +18,7 @@ interface IERC721 {
  *
  * More Info: https://github.com/offshoredao/poc-crossitem-dnft/blob/main/README.md
  */
-
-contract FlyingPeopleDNFT is ERC721Base {
+contract FlyingPeopleDNFT is ERC721Drop {
     // a simple pointer to an NFT that lives on another collection .
     struct Wearable {
         // collection contract address
@@ -46,8 +45,9 @@ contract FlyingPeopleDNFT is ERC721Base {
         string memory _name,
         string memory _symbol,
         address _royaltyRecipient,
-        uint128 _royaltyBps
-    ) ERC721Base(_name, _symbol, _royaltyRecipient, _royaltyBps) {}
+        uint128 _royaltyBps,
+        address _primarySaleRecipient
+    ) ERC721Drop(_name, _symbol, _royaltyRecipient, _royaltyBps, _primarySaleRecipient) {}
 
     /**
      * Attach a Set of Wearables to a fp_nft token (_tokenId).
