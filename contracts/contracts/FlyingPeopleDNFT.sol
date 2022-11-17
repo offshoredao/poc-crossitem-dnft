@@ -76,7 +76,12 @@ contract FlyingPeopleDNFT is ERC721Drop, ChainlinkClient {
         uint256 _tokenId
     ) public {
         require(ownerOf(_tokenId) == msg.sender, "caller not owner");
-
+        require(
+            _collections[0] != address(this) &&
+                _collections[1] != address(this) &&
+                _collections[2] != address(this),
+            "invalid nft"
+        );
         // validate each external nft ownership
         for (uint256 i = 0; i < _collections.length; i++) {
             // instance collection
@@ -101,22 +106,25 @@ contract FlyingPeopleDNFT is ERC721Drop, ChainlinkClient {
         // Test API URL http://159.223.205.1:3000/update-wearables?tokenId=0&c1=1&t1=t1&c2=c2&t2=t2
         // Temp manual cast for testing, improve this =S
 
-        req.add("get", string.concat(
-            "http://159.223.205.1:3000/update-wearables?tokenId=",
-            Strings.toString(_tokenId),
-            "&c1=",
-            Strings.toHexString(uint256(uint160(_collections[0])), 20),
-            "&c2=",
-            Strings.toHexString(uint256(uint160(_collections[1])), 20),
-            "&c3=",
-            Strings.toHexString(uint256(uint160(_collections[2])), 20),
-            "&w1=",
-            Strings.toString(_wearableTokenIds[0]),
-            "&w2=",
-            Strings.toString(_wearableTokenIds[1]),
-            "&w3=",
-            Strings.toString(_wearableTokenIds[2])
-        ));
+        req.add(
+            "get",
+            string.concat(
+                "http://159.223.205.1:3000/update-wearables?tokenId=",
+                Strings.toString(_tokenId),
+                "&c1=",
+                Strings.toHexString(uint256(uint160(_collections[0])), 20),
+                "&c2=",
+                Strings.toHexString(uint256(uint160(_collections[1])), 20),
+                "&c3=",
+                Strings.toHexString(uint256(uint160(_collections[2])), 20),
+                "&w1=",
+                Strings.toString(_wearableTokenIds[0]),
+                "&w2=",
+                Strings.toString(_wearableTokenIds[1]),
+                "&w3=",
+                Strings.toString(_wearableTokenIds[2])
+            )
+        );
         req.add("path", "tokenId");
         sendChainlinkRequestTo(oracle, req, fee);
     }

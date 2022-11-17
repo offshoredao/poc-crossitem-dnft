@@ -41,3 +41,16 @@ If the transaction has been confirmed you can review the contract on your https:
 ```bash
 yarn hardhat test.
 ```
+
+## Instructions
+
+Decentraland Sample Wearables
+0x6EA09D2F74b00C58eB8C1fEA74634539f4f71679
+Contains 3 NFT to be used as wearables.
+
+Flying People - 20
+0x816e1dbD64076c4735D6a03D8514786c8a3eFE47
+Contains 4 FP NFT, used to setWearables.
+
+NFT Owner 
+0x410a5326Ff590644916467B61D696cFA369404D6
