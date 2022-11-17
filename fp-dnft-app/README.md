@@ -1,38 +1,61 @@
-## Getting Started
+# Offshore Genesis Map 
 
-Create a project using this example:
+- Mint Page: https://dapp.theoffshore.io
+- Collection: https://opensea.io/collection/offshoredao
+- Contract: 
+    - https://etherscan.io/address/0x1aa146c9f24f7d2a6349f935ec3da3268c8eb199
+    - https://etherscan.io/token/0x1aa146c9f24f7d2a6349f935ec3da3268c8eb199
+## Tools
+
+- [**NFT Drop**](https://portal.thirdweb.com/pre-built-contracts/nft-drop): to create a lazy-minted ERC721 NFT Collection that our users can claim.
+- [**React SDK**](https://docs.thirdweb.com/react): to enable users to connect their wallets with the [useMetamask](https://portal.thirdweb.com/react/react.usemetamask) hook, and access hooks such as [useNFTDrop](https://portal.thirdweb.com/react/react.usenftdrop) to interact with the NFT drop contract.
+- [**TypeScript SDK**](https://docs.thirdweb.com/typescript): to view the claimed supply, total supply, and mint NFTs from the drop.
+
+## Using This Repo
+
+To create your own version of this template, you can use the following steps:
+
+Run this command from the terminal to clone this project:
 
 ```bash
-npx thirdweb create --template cra-typescript-starter
+npx thirdweb create --template nft-drop
 ```
 
-You can start editing the page by modifying `src/index.tsx`. The page auto-updates as you edit the file.
+### 1. Deploy Your Own NFT Drop 
 
-On `src/index.tsx`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our hooks to work.
+You can learn how to do that [Release an NFT drop](https://portal.thirdweb.com/guides/release-an-nft-drop-with-no-code#create-a-drop-contract).
 
-On `src/index.js`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our [hooks](https://portal.thirdweb.com/react) and
-[UI Components](https://portal.thirdweb.com/ui-components) to work.
+Be sure to configure a **name**, **description**, and **image** for your NFT drop in the dashboard.
 
-### Deploy to IPFS
+### 2. Configure the styles
 
-Deploy a copy of your application to IPFS using the following command:
+You can fully customize the colors and style of this template by editing the values in the [`globals.css`](/styles/globals.css) file.
 
-```bash
-yarn deploy
+You can configure:
+
+- The color of the background with `--background-color`
+- The color of the text with `--text-color`
+- The color of the button (is a gradient from primary to secondary color) with `--color-primary` and `--color-secondary`
+- The font with `--font`
+- The border colors with `--border-color`
+
+### 3. Plug in your NFT Drop contract address
+
+Replace the value of the `myNftDropContractAddress` inside [`index.tsx`](/pages/index.tsx) with your NFT Drop contract address you can find in the dashboard.
+
+### 4. Configure Your Network
+
+Inside [`_app.tsx`](/pages/_app.tsx) you can configure the network you want to use:
+
+```jsx
+// This is the chainId your dApp will work on.
+const activeChainId = ChainId.Mainnet;
 ```
 
-## Learn More
+Create a .env.local and set as you need.
 
-To learn more about thirdweb, React and CRA, take a look at the following resources:
+```
+ALCHEMY_RPC="https://eth-goerli.g.alchemy.com/v2/MY_KEY"
+```
 
-- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
-- [thirdweb TypeScript Documentation](https://docs.thirdweb.com/react) - learn about our JavaScript/TypeScript SDK.
-- [thirdweb Portal](https://docs.thirdweb.com/react) - check our guides and development resources.
-- [Create React App Documentation](https://facebook.github.io/create-react-app/docs/getting-started) - learn about CRA features.
-- [React documentation](https://reactjs.org/) - learn React.
 
-You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
-
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
