@@ -17,16 +17,17 @@ app.get("/update-wearables", (req, res) => {
   const t3 = req.query.t3;
   const tokenId = req.query.tokenId;
 
-  console.log("Test Contract Call")
+  console.log("Test Contract Call - ", tokenId);
+  console.log("Test Contract Call N - ", Number(tokenId));
 
   // Buscar cada imagen de wearable
   // Componer las imagenes
   // Escribir imagen en dnft-imges directory
   // retorno OK
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/json');
+  res.status(200);
+  res.header("Content-Type", "application/json");
   res.json({
-    tokenId: tokenId,
+    tokenId: Number(tokenId),
   });
 });
 

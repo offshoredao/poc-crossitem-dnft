@@ -59,9 +59,9 @@ contract FlyingPeopleDNFT is ERC721Drop, ChainlinkClient {
         // Goerli LINK address
         setChainlinkToken(0x326C977E6efc84E512bB9C30f76E30c160eD06FB);
         // Ethereum Goerli Oracle Address 0xCC79157eb46F5624204f47AB42b3906cAA40eaB7
-        oracle = 0xCC79157eb46F5624204f47AB42b3906cAA40eaB7;
-        // Job Id to get > string 7d80a6386ef543a3abb52817f6707e3b
-        jobId = "7d80a6386ef543a3abb52817f6707e3b";
+        setChainlinkOracle(0xCC79157eb46F5624204f47AB42b3906cAA40eaB7);
+        // Job Id to get > uint256 ca98366cc7314957b8c012c72f05aeeb
+        jobId = "ca98366cc7314957b8c012c72f05aeeb";
         // 0,1 * 10**18 (Varies by network and job)
         fee = (1 * LINK_DIVISIBILITY) / 10;
     }
@@ -111,7 +111,7 @@ contract FlyingPeopleDNFT is ERC721Drop, ChainlinkClient {
         );
         // Test API URL http://159.223.205.1:3000/update-wearables?c1=1&t1=t1&c2=c2&t2=t2
 
-        string memory url = string(
+       string memory url = string(
             abi.encodePacked(
                 "http://159.223.205.1:3000/update-wearables?tokenId=",
                 Strings.toString(_tokenId),
@@ -131,7 +131,7 @@ contract FlyingPeopleDNFT is ERC721Drop, ChainlinkClient {
         );
         req.add("get", url);
         req.add("path", "tokenId");
-        return sendChainlinkRequestTo(oracle, req, fee);
+        return sendChainlinkRequest(req, fee);
     }
 
     /**
