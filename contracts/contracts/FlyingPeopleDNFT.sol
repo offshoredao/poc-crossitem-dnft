@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-pragma solidity ^0.8.8;
+pragma solidity ^0.8.12;
 
 import "@thirdweb-dev/contracts/base/ERC721Drop.sol";
 import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
@@ -46,7 +46,7 @@ contract FlyingPeopleDNFT is ERC721Drop, ChainlinkClient {
     mapping(uint256 => Set) public tokenIdToSet;
 
     // event to emit new set
-    event NewSetEquiped(bytes32 _requestId, uint256 _tokenId);
+    event NewSetEquiped(bytes32 _requestId, string _tokenId);
 
     //
     constructor(
@@ -59,9 +59,9 @@ contract FlyingPeopleDNFT is ERC721Drop, ChainlinkClient {
         // Goerli LINK address
         setChainlinkToken(0x326C977E6efc84E512bB9C30f76E30c160eD06FB);
         // Ethereum Goerli Oracle Address 0xCC79157eb46F5624204f47AB42b3906cAA40eaB7
-        setChainlinkOracle(0xCC79157eb46F5624204f47AB42b3906cAA40eaB7);
-        // Job Id to get > uint256 ca98366cc7314957b8c012c72f05aeeb
-        jobId = "ca98366cc7314957b8c012c72f05aeeb";
+        oracle = 0xCC79157eb46F5624204f47AB42b3906cAA40eaB7;
+        // Job Id to get > string 7d80a6386ef543a3abb52817f6707e3b
+        jobId = "7d80a6386ef543a3abb52817f6707e3b";
         // 0,1 * 10**18 (Varies by network and job)
         fee = (1 * LINK_DIVISIBILITY) / 10;
     }
@@ -74,14 +74,14 @@ contract FlyingPeopleDNFT is ERC721Drop, ChainlinkClient {
         address[3] memory _collections,
         uint256[3] memory _wearableTokenIds,
         uint256 _tokenId
-    ) public returns (bytes32 requestId) {
+    ) public {
         require(ownerOf(_tokenId) == msg.sender, "caller not owner");
 
         // validate each external nft ownership
         for (uint256 i = 0; i < _collections.length; i++) {
             // instance collection
             IERC721 collectionContract = IERC721(_collections[i]);
-            // check token ownershiphttp://159.223.205.1:3000/update-wearables?c1=1&t1=t1&c2=c2&t2=t2
+            // check token ownership
             address tokenOwner = collectionContract.ownerOf(_wearableTokenIds[i]);
             // all good
             if (msg.sender != tokenOwner) {
@@ -93,51 +93,38 @@ contract FlyingPeopleDNFT is ERC721Drop, ChainlinkClient {
             Wearable(_collections[1], _wearableTokenIds[1]),
             Wearable(_collections[2], _wearableTokenIds[2])
         );
-        return requestChainlink(_collections, _wearableTokenIds, _tokenId);
-    }
-
-    /**
-     * Receive the response in the form of string
-     */
-    function requestChainlink(
-        address[3] memory _collections,
-        uint256[3] memory _wearableTokenIds,
-        uint256 _tokenId
-    ) private returns (bytes32 requestId) {
         Chainlink.Request memory req = buildChainlinkRequest(
             jobId,
             address(this),
             this.fulfill.selector
         );
-        // Test API URL http://159.223.205.1:3000/update-wearables?c1=1&t1=t1&c2=c2&t2=t2
+        // Test API URL http://159.223.205.1:3000/update-wearables?tokenId=0&c1=1&t1=t1&c2=c2&t2=t2
+        // Temp manual cast for testing, improve this =S
 
-       string memory url = string(
-            abi.encodePacked(
-                "http://159.223.205.1:3000/update-wearables?tokenId=",
-                Strings.toString(_tokenId),
-                "&c1=",
-                _collections[0],
-                "&t1=",
-                _wearableTokenIds[0],
-                "&c2=",
-                _collections[1],
-                "&t2=",
-                _wearableTokenIds[1],
-                "&c3=",
-                _collections[2],
-                "&t3=",
-                _wearableTokenIds[2]
-            )
-        );
-        req.add("get", url);
+        req.add("get", string.concat(
+            "http://159.223.205.1:3000/update-wearables?tokenId=",
+            Strings.toString(_tokenId),
+            "&c1=",
+            Strings.toHexString(uint256(uint160(_collections[0])), 20),
+            "&c2=",
+            Strings.toHexString(uint256(uint160(_collections[1])), 20),
+            "&c3=",
+            Strings.toHexString(uint256(uint160(_collections[2])), 20),
+            "&w1=",
+            Strings.toString(_wearableTokenIds[0]),
+            "&w2=",
+            Strings.toString(_wearableTokenIds[1]),
+            "&w3=",
+            Strings.toString(_wearableTokenIds[2])
+        ));
         req.add("path", "tokenId");
-        return sendChainlinkRequest(req, fee);
+        sendChainlinkRequestTo(oracle, req, fee);
     }
 
     /**
      * Receive the response in the form of string
      */
-    function fulfill(bytes32 _requestId, uint256 _tokenId)
+    function fulfill(bytes32 _requestId, string memory _tokenId)
         public
         recordChainlinkFulfillment(_requestId)
     {
