@@ -6,14 +6,14 @@ import Header from "../components/_header";
 
 // This is the chainId your dApp will work on.
 const activeChainId = ChainId.Goerli;
-const customRPC = process.env.ALCHEMY_RPC || "";  
+const customRPC = process.env.ALCHEMY_RPC || "";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider
       // 5 For Goerli,
       chainRpc={{
-        1: customRPC,
+        5: customRPC,
       }}
       desiredChainId={activeChainId}
     >

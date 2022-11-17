@@ -43,7 +43,6 @@
 }
 
 .description {
-  opacity: 0.7;
   font-size: 1rem;
 }
 
@@ -82,22 +81,45 @@
   transition-property: background-color, border-color, color, fill, stroke,
     opacity, box-shadow, transform;
   transition-duration: 200ms;
-  height: 3rem;
+  height: 1rem;
   min-width: 3rem;
-  font-size: 1rem;
-  background: #e5e5ea;
-  background-image: linear-gradient(
-    to left,
-    var(--color-primary) 0%,
-    var(--color-secondary) 101.52%
-  );
+  background: var(--color-secondary);
   color: #fff;
-  padding: 20px;
+  margin-top: 1rem;
+  margin-bottom: 0.9rem;
+  padding: 15px;
   text-align: center;
-  border-radius: 9999px;
+  border-radius: 5px;
   border-style: none;
 }
 
+.mintLabel {
+  cursor: pointer;
+  display: inline-flex;
+  appearance: none;
+  align-items: center;
+  -webkit-box-align: center;
+  justify-content: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  line-height: 1.2;
+  font-weight: 600;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-duration: 200ms;
+  height: 1rem;
+  min-width: 3rem;
+  background: var(--color-primary);
+  color: #fff;
+  margin-top: 1rem;
+  margin-bottom: 0.9rem;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+  border-style: none;
+}
 .mainButton:hover {
   opacity: 0.8;
 }
@@ -112,6 +134,8 @@
 .mintAreaLeft {
   margin-left: 5%;
   opacity: 0.75;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 .mintAreaRight {
@@ -147,17 +171,6 @@
   justify-content: center;
   gap: 10%;
   margin-top: 24px;
-}
-
-.textInput {
-  width: 48px;
-  background-color: transparent;
-  border: 1px solid grey;
-  border-radius: 8px;
-  color: #fff;
-  height: 48px;
-  padding: 0 16px;
-  font-size: 1rem;
 }
 
 .quantityControlButton {
@@ -235,4 +248,55 @@
   min-height: 150px;
   max-height: 150px;
   position: relative;
+}
+
+.selectedCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 4px;
+  box-shadow: 0px 0px 5px #000000;
+  min-width: 250px;
+  padding: 4px;
+  background: rgb(40, 42, 42);
+}
+
+.formInline {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.formInline .textInputL {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 8px;
+  color: #fff;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+}
+
+.formInline .textInputR {
+  width: 30%;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 8px;
+  color: #fff;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+}
+
+.formInline h4 {
+  margin: 0.5rem;
+  width: 100%;
+}
+
+.setWearableButton {
+  margin-top: 1rem;
 }
