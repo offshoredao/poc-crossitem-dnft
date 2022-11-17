@@ -1,10 +1,8 @@
-const fs = require("fs");
-require("dotenv").config()
 const sharp = require("sharp");
 const express = require("express");
 const axios = require("axios");
 const thirdwebSDK = require("@thirdweb-dev/sdk/evm");
-const Path = require("path");
+require("dotenv").config();
 
 const app = express();
 const PORT = 3000;
