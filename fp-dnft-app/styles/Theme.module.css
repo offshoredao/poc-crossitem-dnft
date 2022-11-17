@@ -1,0 +1,302 @@
+.header {
+  text-align: left;
+  padding: 1rem;
+}
+
+.container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.previewImage {
+  height: 500px;
+  width: 500px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 8px;
+}
+
+.mintInfoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 0 24px;
+  min-height: 720px;
+  max-width: 95vw;
+  gap: 2%;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+
+.infoSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+}
+
+.description {
+  font-size: 1rem;
+}
+
+.imageSide {
+  width: 40vw;
+  height: 100%;
+}
+
+.image {
+  width: 85%;
+  border-radius: 16px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.mainButton {
+  cursor: pointer;
+  display: inline-flex;
+  appearance: none;
+  align-items: center;
+  -webkit-box-align: center;
+  justify-content: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  line-height: 1.2;
+  font-weight: 600;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-duration: 200ms;
+  height: 1rem;
+  min-width: 3rem;
+  background: var(--color-secondary);
+  color: #fff;
+  margin-top: 1rem;
+  margin-bottom: 0.9rem;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.mintLabel {
+  cursor: pointer;
+  display: inline-flex;
+  appearance: none;
+  align-items: center;
+  -webkit-box-align: center;
+  justify-content: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  line-height: 1.2;
+  font-weight: 600;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-duration: 200ms;
+  height: 1rem;
+  min-width: 3rem;
+  background: var(--color-primary);
+  color: #fff;
+  margin-top: 1rem;
+  margin-bottom: 0.9rem;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+  border-style: none;
+}
+.mainButton:hover {
+  opacity: 0.8;
+}
+
+.mintCompletionArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mintAreaLeft {
+  margin-left: 5%;
+  opacity: 0.75;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.mintAreaRight {
+  margin-right: 5%;
+  opacity: 0.75;
+}
+
+.spacerTop {
+  margin-top: 16px;
+}
+
+.spacerBottom {
+  margin-bottom: 16px;
+}
+
+.buttonGapTop {
+  cursor: pointer;
+  margin-top: 32px;
+}
+
+.quantityContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+}
+
+.mintContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  margin-top: 24px;
+}
+
+.quantityControlButton {
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 1px solid grey;
+  color: #fff;
+}
+
+.quantityControlButton:disabled {
+  opacity: 0.25;
+}
+
+/* On mobile, make the .mintInfoContainer stack vertically */
+@media screen and (max-width: 850px) {
+  .mintInfoContainer {
+    flex-direction: column;
+    padding-bottom: 5%;
+  }
+
+  .infoSide {
+    width: 100%;
+  }
+
+  .imageSide {
+    width: 100%;
+  }
+}
+
+.setWearable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+}
+
+.myNfts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 70%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 4px;
+  box-shadow: 0px 0px 5px #000000;
+  min-width: 250px;
+  padding: 4px;
+  background: rgb(97, 102, 103);
+}
+
+.image {
+  min-width: 150px;
+  max-width: 150px;
+  min-height: 150px;
+  max-height: 150px;
+  position: relative;
+}
+
+.selectedCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 4px;
+  box-shadow: 0px 0px 5px #000000;
+  min-width: 250px;
+  padding: 4px;
+  background: rgb(40, 42, 42);
+}
+
+.formInline {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.formInline .textInputL {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 8px;
+  color: #fff;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+}
+
+.formInline .textInputR {
+  width: 30%;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 8px;
+  color: #fff;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+}
+
+.formInline h4 {
+  margin: 0.5rem;
+  width: 100%;
+}
+
+.setWearableButton {
+  margin-top: 1rem;
+}

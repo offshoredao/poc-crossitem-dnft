@@ -1,8 +1,9 @@
 {
   "name": "fp-dnft-contracts",
   "scripts": {
-    "build": "npx thirdweb@latest detect",
-    "deploy": "npx thirdweb@latest deploy",
+    "palmera": "node palmera.js",
+    "build": "yarn palmera && npx thirdweb@latest detect",
+    "deploy": "yarn palmera && npx thirdweb@latest deploy",
     "release": "npx thirdweb@latest release",
     "lint": "solhint 'contracts/*.sol'",
     "lint:fix": "solhint 'contracts/**/*.sol' --fix",
