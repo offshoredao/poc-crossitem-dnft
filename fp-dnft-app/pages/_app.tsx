@@ -6,7 +6,7 @@ import Header from "../components/_header";
 
 // This is the chainId your dApp will work on.
 const activeChainId = ChainId.Goerli;
-const customRPC = process.env.ALCHEMY_RPC || "";
+const customRPC = process.env.NEXT_PUBLIC_ALCHEMY_RPC || "";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

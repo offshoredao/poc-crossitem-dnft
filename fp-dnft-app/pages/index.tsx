@@ -18,7 +18,7 @@ import styles from "../styles/Theme.module.css";
 import Image from "next/image";
 
 // Put Your NFT Drop Contract address from the dashboard here
-const myNftDropContractAddress = "0x816e1dbd64076c4735d6a03d8514786c8a3efe47";
+const myNftDropContractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "";
 
 const Home: NextPage = () => {
   const { contract: nftDrop } = useContract(myNftDropContractAddress);
