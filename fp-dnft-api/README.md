@@ -7,6 +7,14 @@ A simple express server to:
 
 The endpoint will receive a set of parameters from the smart contract to create an updated Flying People DNFT Image.
 
+# Image and API
+
+Serve DNFT images.
+- https://api.flyingpeople.org/dnft-images/0.png 
+
+Update DNFT images, Chainlink request from smart contract.
+- http://api.flyingpeople.org/update-wearables?tokenId=0?params
+
 ## Install dependencies
 
 ```bash

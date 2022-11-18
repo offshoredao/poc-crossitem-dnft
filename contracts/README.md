@@ -5,9 +5,20 @@ This project uses hardhat and thirdweb/contractkit for development, testing, dep
 -   https://hardhat.org/
 -   https://portal.thirdweb.com/contractkit
 
+# Goerli tesnet 
 
+You can check the contract deployed on testnet.
 
-## Directory Structure
+- contract: 0xD88b1C44f8e10Ca83E82cF6aF4C3717D90b63894
+- https://goerli.etherscan.io/address/0xD88b1C44f8e10Ca83E82cF6aF4C3717D90b63894#code
+
+Contract on thidweb explorer
+- https://thirdweb.com/goerli/0xD88b1C44f8e10Ca83E82cF6aF4C3717D90b63894/nfts
+
+Opensea Collection (remember to refresh metadata to update the nft image at opensea).
+- https://testnets.opensea.io/collection/flying-people-v2
+
+## Directory structure
 
 ```bash
 .
