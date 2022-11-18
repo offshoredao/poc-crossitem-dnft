@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
   res.send("Yooo!");
 });
 
+// TODO, !find a way to allow calls only from the contract chainlink request ...
 app.get("/update-wearables", async (req, res) => {
   const c1 = req.query.c1;
   const w1 = req.query.w1;
@@ -120,6 +121,8 @@ app.get("/update-wearables", async (req, res) => {
   }
 });
 
+/*
+// TODO, add crosschain NFT ownership validation, also must allow only calls from contract chainlink request.
 app.get("/verify-polygon-nfts", (req, res) => {
   const c1 = req.query.c1;
   const t1 = req.query.t1;
@@ -128,10 +131,7 @@ app.get("/verify-polygon-nfts", (req, res) => {
   const c3 = req.query.c3;
   const t3 = req.query.t3;
   const sender = req.query.sender;
-
-  // Buscar cada nft en polygon
-  // Validar ownerOf cada token === sender
-  // retorno OK o ERROR
 });
+*/
 
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
