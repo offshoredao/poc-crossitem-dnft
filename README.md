@@ -34,9 +34,9 @@ Allowing the NFT holder to set three assets, which will be three separated layer
 
 In this Proof of Concept we will use Chainlink, to call an API from our Contract, this API will get the `dclwearable_nft` metadata stored on **IPFS** (Interplanetary File System) and also will get the `dclwearable_nft` images required to compose the new `dnft_image`
 
-Next a representation of `fp_nft` will be created with its user selected `dclwearable_nft`(s) through a `custom tool` that generates and update the new `dnft_image`.
+Next a representation of `fp_nft` will be created with its user selected `dclwearable_nft`(s) through the `Flying People API` that generates and update the new `dnft_image`.
 
-At the moment, the only missing segment to achieve a visual representation in this use case would be a `custom tool` capable of combining the images from all sources and assembling a final image that represents a Flying People Avatar.  
+At the moment, the only missing segment to achieve a visual representation in this use case would be the `Flying People API` capable of combining the images from all sources and assembling a final image that represents a Flying People Avatar.  
 
 The following sequence diagram shows a flow for the proof of concept, which allows us to obtain the entire information stack of a `fp_nft` and its linked `dclwearable_nft` to generate the final image of an avatar by equipping a set of `dclwearable_nft(s)` to it.
 
