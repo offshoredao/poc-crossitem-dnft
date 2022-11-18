@@ -226,6 +226,7 @@ const Home: NextPage = () => {
                 <a
                   href="https://testnets.opensea.io/collection/decentraland-sample-wearables"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Wearables Mock Collection
                 </a>{" "}
