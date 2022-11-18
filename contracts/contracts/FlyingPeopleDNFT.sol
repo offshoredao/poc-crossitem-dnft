@@ -103,13 +103,13 @@ contract FlyingPeopleDNFT is ERC721Drop, ChainlinkClient {
             address(this),
             this.fulfill.selector
         );
-        // Test API URL http://159.223.205.1:3000/update-wearables?tokenId=0&c1=1&t1=t1&c2=c2&t2=t2
+        // Test API URL https://api.flyingpeople.org/update-wearables?tokenId=0&c1=1&t1=t1&c2=c2&t2=t2
         // Temp manual cast for testing, improve this =S
 
         req.add(
             "get",
             string.concat(
-                "http://159.223.205.1:3000/update-wearables?tokenId=",
+                "https://api.flyingpeople.org/update-wearables?tokenId=",
                 Strings.toString(_tokenId),
                 "&c1=",
                 Strings.toHexString(uint256(uint160(_collections[0])), 20),
