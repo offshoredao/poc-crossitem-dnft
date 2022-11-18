@@ -41,3 +41,21 @@ At the moment, the only missing segment to achieve a visual representation in th
 The following sequence diagram shows a flow for the proof of concept, which allows us to obtain the entire information stack of a `fp_nft` and its linked `dclwearable_nft` to generate the final image of an avatar by equipping a set of `dclwearable_nft(s)` to it.
 
 ![dnft-sequence-diagram](./docs-images/sequence.png)
+
+## Project directories
+
+This repository contains three projects.
+
+### [contracts](./contracts)
+
+Solidity contracts for ERC721 Collection, includes `Chainlink` to call external API.
+
+### [fp-dnft-app](./fp-dnft-app)
+
+DApp to `claim` a ERC721 Flying People DNFT, explore your collection, and `set Wearables`.
+
+### [fp-dnft-api](./fp-dnft-api)
+
+Flying People API to serve DNFT images and `update-wearables` endpoint to update the DNFT images.
+
+
