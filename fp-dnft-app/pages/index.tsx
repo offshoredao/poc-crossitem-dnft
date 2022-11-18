@@ -31,10 +31,10 @@ const Home: NextPage = () => {
   });
 
   // The amount the user claims
-  const [tokenId, setTokenId] = useState(undefined);
-  const [c1, setC1] = useState("");
-  const [c2, setC2] = useState("");
-  const [c3, setC3] = useState("");
+  const [tokenId, setTokenId] = useState(-1);
+  const [c1, setC1] = useState("0x6ea09d2f74b00c58eb8c1fea74634539f4f71679");
+  const [c2, setC2] = useState("0x6ea09d2f74b00c58eb8c1fea74634539f4f71679");
+  const [c3, setC3] = useState("0x6ea09d2f74b00c58eb8c1fea74634539f4f71679");
   const [w1, setW1] = useState("");
   const [w2, setW2] = useState("");
   const [w3, setW3] = useState("");
@@ -133,14 +133,13 @@ const Home: NextPage = () => {
                 <div className={styles.mintContainer}>
                   <Web3Button
                     contractAddress={myNftDropContractAddress}
-                    isDisabled={userBalance?.toNumber() === 1}
                     action={async (contract) => await contract.erc721.claim(1)}
                     // If the function is successful, we can do something here.
                     onSuccess={(result) =>
                       alert(
-                        `Successfully claimed ${result.length} Genesis Map NFT${
-                          result.length > 1 ? "s" : ""
-                        }!`
+                        `Successfully claimed ${
+                          result.length
+                        } Flying People DNFT${result.length > 1 ? "s" : ""}!`
                       )
                     }
                     // If the function fails, we can do something here.
@@ -165,12 +164,6 @@ const Home: NextPage = () => {
                     }`}
                   </Web3Button>
                 </div>
-
-                {userBalance?.toNumber() === 1 && (
-                  <div>
-                    <h4>Congratulations, you now hold the map 🏝️.</h4>
-                  </div>
-                )}
               </>
             )
           }
@@ -196,7 +189,7 @@ const Home: NextPage = () => {
                   <div
                     key={nft.metadata.id.toString()}
                     className={
-                      tokenId === nft.metadata.id
+                      tokenId.toString() === nft.metadata.id
                         ? styles.selectedCard
                         : styles.card
                     }
@@ -227,6 +220,17 @@ const Home: NextPage = () => {
               <p>
                 Set <b>{"<Collection Address>"}</b> and <b>{"<tokenId>"}</b>{" "}
                 <br></br>for each Wearable you own.
+              </p>
+              <p>
+                This is a{" "}
+                <a
+                  href="https://testnets.opensea.io/collection/decentraland-sample-wearables"
+                  target="_blank"
+                >
+                  Wearables Mock Collection
+                </a>{" "}
+                for testnet purposes. You can buy a Mock NFT to be used as
+                Wearable.
               </p>
               <div className={styles.formInline}>
                 <h4>Wearable 1</h4>
@@ -290,8 +294,14 @@ const Home: NextPage = () => {
               <Web3Button
                 contractAddress="0x816e1dbD64076c4735D6a03D8514786c8a3eFE47"
                 className={styles.setWearableButton}
-                action={(contract) => {
+                onSuccess={(result) =>
+                  alert(
+                    `Successfully Updated, wait a minute and refresh the page to see you new DNFT image.`
+                  )
+                }
+                action={async (contract) => {
                   if (
+                    tokenId === -1 ||
                     c1.length === 0 ||
                     c2.length === 0 ||
                     c3.length === 0 ||
@@ -299,14 +309,17 @@ const Home: NextPage = () => {
                     w2.length === 0 ||
                     w3.length === 0
                   )
-                    alert("Please fill the Set Wearables form, missing value");
+                    alert(
+                      "Please, select a Flying People and fill the Set Wearables form."
+                    );
                   else
-                    contract.call(
+                    return await contract.call(
                       "setWearables",
                       [c1, c2, c3],
                       [w1, w2, w3],
                       tokenId
                     );
+                  throw new Error()
                 }}
               >
                 Set Wearables
