@@ -231,9 +231,19 @@ const Home: NextPage = () => {
                   rel="noreferrer"
                 >
                   Wearables Mock Collection
-                </a>{" "}
+                </a>
                 for testnet purposes. You can buy a Mock NFT to be used as
                 Wearable.
+              </p>  
+              <p>
+                You can also claim some 
+                <a
+                  href="https://thirdweb.com/goerli/0x6EA09D2F74b00C58eB8C1fEA74634539f4f71679/nfts"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                 here
+                </a>
               </p>
               <div className={styles.formInline}>
                 <h4>Wearable 1</h4>
