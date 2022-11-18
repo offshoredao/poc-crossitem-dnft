@@ -28,7 +28,7 @@ In addition to the above, once the ownership of the items is proven we will gene
 
 Allowing the NFT holder to set three assets, which will be three separated layers stored at the `fp_nft` `animation_url`
 
-![dnft-basic-image](https://user-images.githubusercontent.com/11360704/200147256-a8db5905-bb76-42a9-a6ef-4c6d77f2ea27.png)
+![dnft-basic-image](./docs-images/DNFT.png)
 
 ## How it works
 
@@ -40,4 +40,4 @@ At the moment, the only missing segment to achieve a visual representation in th
 
 The following sequence diagram shows a flow for the proof of concept, which allows us to obtain the entire information stack of a `fp_nft` and its linked `dclwearable_nft` to generate the final image of an avatar by equipping a set of `dclwearable_nft(s)` to it.
 
-![dnft-sequence-diagram-0 1](https://user-images.githubusercontent.com/11360704/200144887-5ecc134d-fa85-4570-8f66-0e3359209ccf.png)
+![dnft-sequence-diagram](./docs-images/sequence.png)
