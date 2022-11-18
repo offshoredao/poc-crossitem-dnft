@@ -2,7 +2,7 @@
 
 Build using Next and Thirdweb sdk.
 
-- Mint DApp: https://flyingpeople.org/
+- Claim DApp: https://flyingpeople.org/
 
 # Pre requisites
 
@@ -37,6 +37,7 @@ Set `CONTRACT_ADDRESS` from you contract deployment.
 NEXT_PUBLIC_ALCHEMY_RPC=https://eth-goerli.g.alchemy.com/v2/KEY
 NEXT_PUBLIC_CONTRACT_ADDRESS="0x111"
 ```
+
 ## Run
 
 ```bash
@@ -44,3 +45,17 @@ npm run dev
 # or
 yarn start
 ```
+
+# All Done!
+
+At this point you have:
+
+- 1. The [`contracts`](../contracts/README.md) deployed and batch `minted` the DNFT's.
+
+- 2. A running `App` to `claim` and check your owned Flying People DNFT's
+
+As a final step we need to launch a server to expose the collection NFT images and an endpoint that will be called from our smart contracts using Chainlink.
+
+Check the [fp-dnft-api](../fp-dnft-api) directory to launch this server.
+
+
