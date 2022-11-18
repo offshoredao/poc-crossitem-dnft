@@ -195,10 +195,12 @@ const Home: NextPage = () => {
                     }
                   >
                     <h2>{nft.metadata.name}</h2>
-                    <ThirdwebNftMedia
-                      metadata={nft.metadata}
+                    <img
                       className={styles.image}
-                    />
+                      src={
+                        nft.metadata.image + "?" + new Date().getTime() || ""
+                      }
+                    ></img>
                     <button
                       id={nft.metadata.id.toString()}
                       onClick={handleSelectNFT}
@@ -295,9 +297,9 @@ const Home: NextPage = () => {
               <Web3Button
                 contractAddress="0x816e1dbD64076c4735D6a03D8514786c8a3eFE47"
                 className={styles.setWearableButton}
-                onSuccess={(result) =>
+                onSuccess={() =>
                   alert(
-                    `Successfully Updated, wait a minute and refresh the page to see you new DNFT image.`
+                    `Successfully Updated, wait a minute to see you new DNFT image.`
                   )
                 }
                 action={async (contract) => {
@@ -320,7 +322,7 @@ const Home: NextPage = () => {
                       [w1, w2, w3],
                       tokenId
                     );
-                  throw new Error()
+                  throw new Error();
                 }}
               >
                 Set Wearables
