@@ -305,7 +305,7 @@ const Home: NextPage = () => {
                 />
               </div>
               <Web3Button
-                contractAddress="0x816e1dbD64076c4735D6a03D8514786c8a3eFE47"
+                contractAddress={myNftDropContractAddress}
                 className={styles.setWearableButton}
                 onSuccess={() =>
                   alert(
