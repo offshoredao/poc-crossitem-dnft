@@ -27,7 +27,7 @@ const Home: NextPage = () => {
 
   const { data: nfts, isLoading: loading } = useNFTs(nftDrop, {
     start: 0,
-    count: 10,
+    count: 30,
   });
 
   // The amount the user claims
